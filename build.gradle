@@ -1,27 +1,25 @@
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.7.10'
-    id 'io.spring.dependency-management' version '1.1.0'
+	id 'java'
+	id 'org.springframework.boot' version '2.0.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
-group = 'com.example.spring'
+group = 'punkty'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 repositories {
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    // https://mvnrepository.com/artifact/io.vavr/vavr
-    implementation group: 'io.vavr', name: 'vavr', version: '1.0.0-alpha-3'
-    testImplementation 'junit:junit:4.13.1'
-
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation group: 'com.h2database', name: 'h2', version: '1.4.196'
+	implementation group: 'io.vavr', name: 'vavr', version: '0.10.4'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.testng:testng:7.1.0'
+	implementation 'io.springfox:springfox-swagger2:2.9.2'
+	implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 }
-
-tasks.named('test') {
-    useJUnitPlatform()
-}
-
